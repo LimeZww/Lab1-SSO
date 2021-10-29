@@ -23,7 +23,8 @@ public class ViewController {
     public String toIndex(@RequestParam(required = false,defaultValue = "")String target,
                           HttpSession session,@CookieValue(required = false,value = "TOKEN") Cookie cookie){
         if(StringUtils.isEmpty(target)){
-            target="http://systemA.codeshop.com:9010";
+            //默认跳转到系统A
+            target="http://systemA.codeshop.com:9012";
         }
         //如果已经登录的用户再次访问登录系统时，就要重定向
         if(cookie != null){

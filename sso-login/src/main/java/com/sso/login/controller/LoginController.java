@@ -24,8 +24,8 @@ import java.util.UUID;
 public class LoginController {
 
     //连接mongodb数据库
-    MongoClient mongoClient=new MongoClient("localhost",27017);
-    DB db= (DB) mongoClient.getDatabase("my_user");
+    //MongoClient mongoClient=new MongoClient("localhost",27017);
+    //DB db= (DB) mongoClient.getDatabase("my_user");
     //创建新用户
     //MongoCredential credential = new MongoCredential("zhangsan","my_user","12345".toCharArray());
 

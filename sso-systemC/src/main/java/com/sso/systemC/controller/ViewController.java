@@ -22,14 +22,20 @@ public class ViewController {
 
     @GetMapping("/index")
     public String toIndex(@CookieValue(required = false,value = "TOKEN") Cookie cookie, HttpSession session){
+        String target = "";
         if(cookie!=null){
+            //若已登录，则允许访问
             String token=cookie.getValue();
             if(!StringUtils.isEmpty(token)){
                 Map result = restTemplate.getForObject(USER_INFO_ADDRESS + token, Map.class);
                 //保存已登录用户
                 session.setAttribute("loginUser",result);
+                return "index";
             }
+        }else {
+            //未登录，跳转到登录界面
+            target="http://login.codeshop.com:9000/view/login?target=http://systemC.codeshop.com:9011/view/index";
         }
-        return "index";
+        return "redirect:"+target;
     }
 }
