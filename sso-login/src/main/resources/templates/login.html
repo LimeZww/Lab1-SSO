@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>登录界面</title>
+</head>
+<body>
+    <h1>欢迎来到登录界面</h1>
+    <p style="color: red;" th:text="${session.msg}"></p>
+    <form action="/login" method="post">
+        <table>
+            <tr>
+                <td>
+                    用户名：<input name="username" value="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    密码： <input name="password" value="">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="submit">登录</button>
+                    <button type="button">注册</button>
+                </td>
+            </tr>
+
+        </table>
+
+    </form>
+
+
+</body>
+</html>
