@@ -24,7 +24,7 @@ public class ViewController {
                           HttpSession session,@CookieValue(required = false,value = "TOKEN") Cookie cookie){
         if(StringUtils.isEmpty(target)){
             //默认跳转到系统A
-            target="http://systemA.codeshop.com:9012";
+            target="http://systemC.codeshop.com:9011";
         }
         //如果已经登录的用户再次访问登录系统时，就要重定向
         if(cookie != null){

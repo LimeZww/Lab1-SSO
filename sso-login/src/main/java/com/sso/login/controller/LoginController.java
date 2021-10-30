@@ -83,7 +83,10 @@ public class LoginController {
     public String logout(@CookieValue(value = "TOKEN")Cookie cookie,HttpServletResponse response,String target){
         response.reset();
         //cookie过期
+        //cookie = new Cookie("TOKEN","no");
         cookie.setMaxAge(0);
+        //cookie.setDomain("codeshop.com");
+        response.addCookie(cookie);
         //清除缓存
         LoginCacheUtil.loginUser.remove(cookie.getValue());
         return "redirect:"+target;
