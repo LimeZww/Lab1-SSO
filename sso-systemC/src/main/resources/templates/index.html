@@ -11,6 +11,8 @@
         <a th:if="${session.loginUser == null}" href="http://login.codeshop.com:9000/view/login?target=http://systemB.codeshop.com:9010/view/index">SystemB</a>
 <!--        <a th:if="${session.loginUser == null}" href="http://login.codeshop.com:9000/view/login?target=http://systemC.codeshop.com:9011/view/index">登录</a>-->
         <!-- 若退出登录，则跳转到登录界面-->
+        <a th:unless="${session.loginUser == null}" href="http://login.codeshop.com:9000/view/login?target=http://systemA.codeshop.com:9012/view/index">SystemA</a>
+        <a th:unless="${session.loginUser == null}" href="http://login.codeshop.com:9000/view/login?target=http://systemB.codeshop.com:9010/view/index">SystemB</a>
         <a th:unless="${session.loginUser==null}" href="http://systemC.codeshop.com:9000/login/logout?target=http://login.codeshop.com:9000/view/login">退出</a>
     </span>
     <p th:unless="${session.loginUser==null}">

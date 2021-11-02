@@ -3,32 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>登录界面</title>
+    <style type="text/css">
+        .login{
+            text-align:right;
+            background-color:#385370;
+            width: 300px;height: 240px;
+            line-height: 50px;
+            padding-right: 60px;
+            margin-top: 100px;
+            margin-left: 100px;
+        }
+    </style>
 </head>
 <body>
-    <h1>欢迎来到登录界面</h1>
-    <p style="color: red;" th:text="${session.msg}"></p>
-    <form action="/login" method="post">
-        <table>
-            <tr>
-                <td>
-                    用户名：<input name="username" value="">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    密码： <input name="password" value="">
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <button type="submit">登录</button>
-                </td>
-            </tr>
-
-        </table>
-
+<div class="login">
+    <h3>欢迎来到登陆界面</h3>
+    <p style="color: red" th:text="${session.msg}"></p>
+    <form action="/login" method="POST">
+        用户名：<input name="username" value=""><br/>
+        密码：<input name="password" value=""><br/>
+        <button type="submit">登录</button>
     </form>
-
-
+</div>
 </body>
 </html>
